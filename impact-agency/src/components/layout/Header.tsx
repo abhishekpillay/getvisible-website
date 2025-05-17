@@ -25,10 +25,30 @@ export default function Header() {
   }, []);
 
   return (
-    <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? 'bg-white/95 shadow-[0_2px_24px_0_rgba(0,0,0,0.04)] backdrop-blur-[8px] py-3' : 'bg-transparent py-5'
-      }`}
+    <motion.header
+      initial={false}
+      animate={isScrolled ? {
+        background: 'rgba(255,255,255,0.8)',
+        boxShadow: '0 2px 24px 0 rgba(0,0,0,0.04)',
+        backdropFilter: 'blur(14px)',
+        paddingTop: '0.75rem',
+        paddingBottom: '0.75rem',
+        borderBottom: '1px solid rgba(200,200,255,0.12)',
+      } : {
+        background: 'rgba(255,255,255,0)',
+        boxShadow: 'none',
+        backdropFilter: 'blur(0px)',
+        paddingTop: '1.25rem',
+        paddingBottom: '1.25rem',
+        borderBottom: '1px solid rgba(0,0,0,0)',
+      }}
+      transition={{
+        type: 'spring',
+        stiffness: 120,
+        damping: 20,
+        duration: 0.4
+      }}
+      className={`fixed top-0 left-0 right-0 z-50 w-full transition-all duration-300 ${isScrolled ? 'glass' : ''}`}
     >
       <div className="max-w-[1200px] mx-auto px-4 md:px-8">
         <div className="flex items-center justify-between">
@@ -129,6 +149,6 @@ export default function Header() {
           </motion.div>
         )}
       </AnimatePresence>
-    </header>
+    </motion.header>
   );
 }
