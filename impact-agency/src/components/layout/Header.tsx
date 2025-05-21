@@ -60,8 +60,7 @@ export default function Header() {
             className="flex items-center"
           >
             <Link href="/" className="flex items-center gap-1.5">
-              <span className="text-secondary text-xl">•</span>
-              <span className="text-[1.25rem] font-display font-medium text-primary select-none">impact</span>
+              <img src="/visible%20logo.svg" alt="Visible Logo" className="h-8 w-auto" />
             </Link>
           </motion.div>
 
