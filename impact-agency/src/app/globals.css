@@ -2,6 +2,7 @@
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap');
 
 :root {
   --primary: #1a1d1f;
@@ -152,22 +153,24 @@ button, .btn {
 }
 
 .btn-primary {
-  background: var(--secondary);
+  background: var(--secondary-color);
   color: #fff;
-  box-shadow: 0 2px 16px 0 rgba(74,92,255,0.08);
+  box-shadow: 0 2px 16px 0 rgba(46, 120, 235, 0.2);
 }
 .btn-primary:hover {
-  background: #222aff;
+  background: #1a5bbf;
+  box-shadow: 0 4px 20px 0 rgba(46, 120, 235, 0.3);
 }
 
 .btn-outline {
   background: #fff;
-  color: var(--secondary);
-  border: 1.5px solid var(--secondary);
+  color: var(--secondary-color);
+  border: 1.5px solid var(--secondary-color);
 }
 .btn-outline:hover {
-  background: var(--secondary);
+  background: var(--secondary-color);
   color: #fff;
+  border-color: var(--secondary-color);
 }
 
 .section {
@@ -188,7 +191,7 @@ button, .btn {
 /* Custom Variables */
 :root {
   --primary-color: #1e293b;
-  --secondary-color: #3b82f6;
+  --secondary-color: #2e78eb;
   --accent-color: #f59e0b;
   --background-light: #f8fafc;
   --text-dark: #0f172a;
