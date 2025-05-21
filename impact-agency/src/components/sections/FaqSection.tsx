@@ -37,11 +37,7 @@ const faqs = [
   },
 ];
 
-const categories = ['All', ...Array.from(new Set(faqs.map(faq => faq.category)))];
-
 export default function FaqSection() {
-  const [activeIndex, setActiveIndex] = useState<number | null>(null);
-  const [activeCategory, setActiveCategory] = useState('All');
   const sectionRef = useRef<HTMLDivElement>(null);
   
   useEffect(() => {
@@ -57,14 +53,6 @@ export default function FaqSection() {
       return () => ctx.revert();
     }
   }, []);
-
-  const toggleFaq = (index: number) => {
-    setActiveIndex(activeIndex === index ? null : index);
-  };
-
-  const filteredFaqs = activeCategory === 'All' 
-    ? faqs 
-    : faqs.filter(faq => faq.category === activeCategory);
 
   return (
     <section ref={sectionRef} className="py-24 bg-gray-50 relative overflow-hidden">
@@ -91,7 +79,7 @@ export default function FaqSection() {
             viewport={{ once: true }}
             className="text-3xl md:text-4xl font-display font-bold text-primary mb-4"
           >
-            Your <span className="text-secondary">questions</span>, answered
+            Frequently Asked Questions
           </motion.h2>
           
           <motion.p
@@ -99,109 +87,53 @@ export default function FaqSection() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
             viewport={{ once: true }}
-            className="text-lg text-gray-600"
+            className="text-gray-600 mb-8"
           >
-            Whether you're a new client or a long-time partner, we're here to help. 
-            Below are answers to the most common questions.
+            Answers to our most common client questions.
           </motion.p>
-        </div>
-        
-        {/* Category filters */}
-        <div className="flex flex-wrap justify-center gap-3 mb-12">
-          {categories.map((category, idx) => (
-            <motion.button
-              key={category}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.3, delay: 0.1 + idx * 0.05 }}
-              viewport={{ once: true }}
-              onClick={() => setActiveCategory(category)}
-              className={`px-5 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
-                activeCategory === category 
-                  ? 'bg-secondary text-white shadow-md' 
-                  : 'bg-white text-gray-600 hover:bg-gray-100'
-              }`}
-            >
-              {category}
-            </motion.button>
-          ))}
         </div>
 
         <div className="max-w-3xl mx-auto">
-          <AnimatePresence>
-            {filteredFaqs.map((faq, index) => (
-              <motion.div
-                key={`${activeCategory}-${index}`}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -20 }}
-                transition={{ duration: 0.5, delay: index * 0.05 }}
-                className="mb-4"
-              >
-                <div 
-                  className={`bg-white rounded-xl shadow-sm overflow-hidden border border-gray-100 transition-all duration-300 ${activeIndex === index ? 'shadow-md' : ''}`}
-                >
-                  <button
-                    onClick={() => toggleFaq(index)}
-                    className="flex justify-between items-center w-full text-left p-6 hover:bg-gray-50 transition-colors duration-300"
-                    aria-expanded={activeIndex === index}
-                  >
-                    <div className="flex items-center">
-                      <span className="inline-block w-8 h-8 rounded-full bg-secondary/10 text-secondary font-semibold flex items-center justify-center mr-4">
-                        {index + 1}
-                      </span>
-                      <h3 className="text-lg font-bold text-primary pr-8">{faq.question}</h3>
-                    </div>
-                    <div className={`w-8 h-8 rounded-full flex items-center justify-center border border-gray-200 transition-all duration-300 ${activeIndex === index ? 'bg-secondary border-secondary' : 'bg-white'}`}>
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        className={`h-4 w-4 transition-transform duration-300 ${activeIndex === index ? 'transform rotate-180 text-white' : 'text-gray-500'}`}
-                        viewBox="0 0 20 20"
-                        fill="currentColor"
-                      >
-                        <path
-                          fillRule="evenodd"
-                          d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                          clipRule="evenodd"
-                        />
-                      </svg>
-                    </div>
-                  </button>
-                  <AnimatePresence>
-                    {activeIndex === index && (
-                      <motion.div
-                        initial={{ height: 0, opacity: 0 }}
-                        animate={{ height: 'auto', opacity: 1 }}
-                        exit={{ height: 0, opacity: 0 }}
-                        transition={{ duration: 0.3 }}
-                        className="overflow-hidden"
-                      >
-                        <div className="p-6 pt-0 border-t border-gray-100">
-                          <p className="text-gray-600 pl-12">{faq.answer}</p>
-                        </div>
-                      </motion.div>
-                    )}
-                  </AnimatePresence>
+          {faqs.map((faq, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: index * 0.05 }}
+              viewport={{ once: true }}
+              className="mb-4"
+            >
+              <div className="bg-white rounded-xl shadow-sm overflow-hidden border border-gray-100 transition-all duration-300 shadow-md">
+                <div className="flex justify-between items-center w-full text-left p-6">
+                  <div className="flex items-center">
+                    <span className="inline-block w-8 h-8 rounded-full bg-secondary/10 text-secondary font-semibold flex items-center justify-center mr-4">
+                      {index + 1}
+                    </span>
+                    <h3 className="text-lg font-bold text-primary pr-8">{faq.question}</h3>
+                  </div>
                 </div>
-              </motion.div>
-            ))}
-          </AnimatePresence>
-          
-          {/* Contact CTA */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.3 }}
-            viewport={{ once: true }}
-            className="mt-12 text-center p-8 bg-gradient-to-r from-secondary/10 to-primary/10 rounded-xl"
-          >
-            <h3 className="text-xl font-bold text-primary mb-4">Still have questions?</h3>
-            <p className="text-gray-600 mb-6">Can't find the answer you're looking for? Please contact our friendly team.</p>
-            <a href="/contact" className="btn-primary inline-block">
-              Contact Us
-            </a>
-          </motion.div>
+                <div className="p-6 pt-0 border-t border-gray-100">
+                  <p className="text-gray-600 pl-12">{faq.answer}</p>
+                </div>
+              </div>
+            </motion.div>
+          ))}
         </div>
+
+        {/* Contact CTA */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.3 }}
+          viewport={{ once: true }}
+          className="mt-16 text-center p-14 md:p-20 bg-gradient-to-r from-secondary/10 to-primary/10 rounded-3xl shadow-2xl border-2 border-primary/20"
+        >
+          <h3 className="text-3xl md:text-4xl font-extrabold text-primary mb-6">Still have questions?</h3>
+          <p className="text-lg md:text-2xl text-gray-700 mb-8">Can't find the answer you're looking for? Please contact our friendly team.</p>
+          <a href="/contact" className="btn-primary inline-block text-lg md:text-2xl px-10 py-5 mt-2">
+            Contact Us
+          </a>
+        </motion.div>
       </div>
     </section>
   );

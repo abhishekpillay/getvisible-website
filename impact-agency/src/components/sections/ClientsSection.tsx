@@ -12,12 +12,12 @@ if (typeof window !== 'undefined') {
 }
 
 const clients = [
-  { name: 'Google', logo: '/images/clients/google.svg' },
-  { name: 'Microsoft', logo: '/images/clients/microsoft.svg' },
-  { name: 'Airbnb', logo: '/images/clients/airbnb.svg' },
-  { name: 'Spotify', logo: '/images/clients/spotify.svg' },
-  { name: 'Amazon', logo: '/images/clients/amazon.svg' },
-  { name: 'Slack', logo: '/images/clients/slack.svg' },
+  { name: 'Simplified AI' },
+  { name: 'Otto AI' },
+  { name: 'Fireflies AI' },
+  { name: '1Fort' },
+  { name: 'Roomi' },
+  { name: 'Dupe.com' },
 ];
 
 export default function ClientsSection() {
@@ -64,9 +64,7 @@ export default function ClientsSection() {
           viewport={{ once: true }}
           className="text-center mb-12"
         >
-          <h2 className="text-3xl font-bold text-primary mb-4">
-            Trusted by industry leaders and loved by clients
-          </h2>
+          
           <p className="text-gray-600 max-w-2xl mx-auto">
             We've had the privilege of working with some of the most innovative companies across various industries.
           </p>

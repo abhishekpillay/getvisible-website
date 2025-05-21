@@ -64,20 +64,19 @@ export default function HeroSection() {
           
 
           {/* Main headline */}
-          <h1 className="hero-title text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-[1.1]">
-            Elevate your brand<br />with digital marketing
+          <h1 className="hero-title text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-bold text-gray-900 mb-6 leading-[1.1]">
+            You Built the Product. We’re the SaaS SEO Agency That Grows It.
           </h1>
 
           {/* Subtitle */}
-          <p className="hero-subtitle text-base md:text-lg text-gray-600 mb-10 max-w-2xl mx-auto leading-relaxed">
-            Crafting unforgettable digital experiences for your brand<br />
-            through innovative design, strategy, marketing and storytelling.
+          <p className="hero-subtitle text-sm md:text-base text-gray-600 mb-10 max-w-2xl mx-auto leading-relaxed">
+            We help companies in FinTech, AI, and B2B SaaS build sustainable growth through content, AI-powered SEO services, and search strategies that actually drive results.
           </p>
           <button
-            className="bg-[#2e78eb] text-white px-5 py-2 rounded-lg shadow-sm hover:bg-[#1861c2] font-medium text-[0.95rem] transition-all duration-200 hover:shadow-md"
+            className="bg-gradient-to-r from-[#2e78eb] to-[#1861c2] text-white px-6 py-3 rounded-xl shadow-lg font-bold text-base transition-all duration-200 hover:brightness-110 hover:scale-105 focus:outline-none focus:ring-4 focus:ring-[#2e78eb]/40"
             style={{ fontFamily: 'DM Sans, sans-serif' }}
           >
-            Start a Project
+            Book a Strategy Call →
           </button>
         </div>
       </div>
