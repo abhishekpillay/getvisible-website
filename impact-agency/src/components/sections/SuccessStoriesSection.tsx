@@ -35,7 +35,7 @@ function AnimatedBrandsTransformed({ isInView }: { isInView: boolean }) {
     }
   }, [isInView]);
   return (
-    <div className="text-3xl md:text-4xl font-bold text-gray-900 mb-1">
+    <div className="text-7xl md:text-8xl font-bold text-gray-900 mb-1">
       {value}+
     </div>
   );
@@ -65,7 +65,7 @@ function AnimatedImpressionsGenerated({ isInView }: { isInView: boolean }) {
     }
   }, [isInView]);
   return (
-    <div className="text-3xl md:text-4xl font-bold text-gray-900 mb-1">
+    <div className="text-7xl md:text-8xl font-bold text-gray-900 mb-1">
       {value}M+
     </div>
   );
@@ -95,7 +95,7 @@ function AnimatedAverageROI({ isInView }: { isInView: boolean }) {
     }
   }, [isInView]);
   return (
-    <div className="text-3xl md:text-4xl font-bold text-gray-900 mb-1">
+    <div className="text-7xl md:text-8xl font-bold text-gray-900 mb-1">
       {value}x
     </div>
   );
@@ -125,7 +125,7 @@ function AnimatedClientRevenueGrowth({ isInView }: { isInView: boolean }) {
     }
   }, [isInView]);
   return (
-    <div className="text-3xl md:text-4xl font-bold text-gray-900 mb-1">
+    <div className="text-7xl md:text-8xl font-bold text-gray-900 mb-1">
       {value}M+
     </div>
   );
@@ -165,7 +165,7 @@ export default function SuccessStoriesSection() {
               ) : stat.key === 'revenue' ? (
                 <AnimatedClientRevenueGrowth isInView={inView} />
               ) : (
-                <div className="text-3xl md:text-4xl font-bold text-gray-900 mb-1">{stat.value}</div>
+                <div className="text-7xl md:text-8xl font-bold text-gray-900 mb-1">{stat.value}</div>
               )}
               <div className="text-base text-gray-600">{stat.label}</div>
             </div>

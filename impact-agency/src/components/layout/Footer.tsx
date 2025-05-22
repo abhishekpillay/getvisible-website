@@ -6,7 +6,7 @@ import { motion } from 'framer-motion';
 export default function Footer() {
   const currentYear = new Date().getFullYear();
   return (
-    <footer className="bg-primary text-white pt-20 pb-8">
+    <footer className="text-white pt-20 pb-8" style={{ backgroundColor: '#2E77EA' }}>
       <div className="max-w-[1200px] mx-auto px-4 md:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-14">
           <motion.div
@@ -15,7 +15,9 @@ export default function Footer() {
             transition={{ duration: 0.5 }}
             viewport={{ once: true }}
           >
-            <h3 className="text-2xl font-display font-bold mb-5 tracking-tight">Impact</h3>
+            <div className="mb-5">
+              <img src="/visible logo.svg" alt="Visible Logo" className="h-10 w-auto brightness-0 invert" />
+            </div>
             <p className="text-gray-300 text-base mb-6 max-w-xs">
               Create your Agency website with Impact, a template for digital agencies and other creatives.
             </p>
@@ -53,33 +55,9 @@ export default function Footer() {
             transition={{ duration: 0.5, delay: 0.1 }}
             viewport={{ once: true }}
           >
-            <h3 className="text-xl font-bold mb-4">Pages</h3>
+            <span className="text-base font-bold mb-4 mt-24">Pages</span>
             <ul className="space-y-3">
-              <li>
-                <Link href="/" className="text-gray-300 hover:text-white transition-colors duration-300">
-                  Home
-                </Link>
-              </li>
-              <li>
-                <Link href="/services" className="text-gray-300 hover:text-white transition-colors duration-300">
-                  Services
-                </Link>
-              </li>
-              <li>
-                <Link href="/case-studies" className="text-gray-300 hover:text-white transition-colors duration-300">
-                  Case Studies
-                </Link>
-              </li>
-              <li>
-                <Link href="/about-us" className="text-gray-300 hover:text-white transition-colors duration-300">
-                  About Us
-                </Link>
-              </li>
-              <li>
-                <Link href="/contact" className="text-gray-300 hover:text-white transition-colors duration-300">
-                  Contact
-                </Link>
-              </li>
+              
             </ul>
           </motion.div>
           
@@ -89,34 +67,8 @@ export default function Footer() {
             transition={{ duration: 0.5, delay: 0.2 }}
             viewport={{ once: true }}
           >
-            <h3 className="text-xl font-bold mb-4">Services</h3>
-            <ul className="space-y-3">
-              <li>
-                <Link href="/services" className="text-gray-300 hover:text-white transition-colors duration-300">
-                  Digital Marketing
-                </Link>
-              </li>
-              <li>
-                <Link href="/services" className="text-gray-300 hover:text-white transition-colors duration-300">
-                  Brand Strategy
-                </Link>
-              </li>
-              <li>
-                <Link href="/services" className="text-gray-300 hover:text-white transition-colors duration-300">
-                  Web Development
-                </Link>
-              </li>
-              <li>
-                <Link href="/services" className="text-gray-300 hover:text-white transition-colors duration-300">
-                  UI/UX Design
-                </Link>
-              </li>
-              <li>
-                <Link href="/services" className="text-gray-300 hover:text-white transition-colors duration-300">
-                  Content Creation
-                </Link>
-              </li>
-            </ul>
+            <span className="text-base font-bold mb-4 mt-24">Services</span>
+            <ul className="space-y-3"></ul>
           </motion.div>
           
           <motion.div
@@ -125,28 +77,8 @@ export default function Footer() {
             transition={{ duration: 0.5, delay: 0.3 }}
             viewport={{ once: true }}
           >
-            <h3 className="text-xl font-bold mb-4">Contact</h3>
-            <ul className="space-y-3">
-              <li className="flex items-start space-x-3">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mt-0.5 text-secondary" viewBox="0 0 20 20" fill="currentColor">
-                  <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
-                </svg>
-                <span className="text-gray-300">123 Design Street, Creative City, 10100</span>
-              </li>
-              <li className="flex items-start space-x-3">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mt-0.5 text-secondary" viewBox="0 0 20 20" fill="currentColor">
-                  <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
-                  <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
-                </svg>
-                <span className="text-gray-300">contact@impact-agency.com</span>
-              </li>
-              <li className="flex items-start space-x-3">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mt-0.5 text-secondary" viewBox="0 0 20 20" fill="currentColor">
-                  <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
-                </svg>
-                <span className="text-gray-300">+1 (555) 123-4567</span>
-              </li>
-            </ul>
+            <span className="text-base font-bold mb-4 mt-24">Contact</span>
+            <ul className="space-y-3"></ul>
           </motion.div>
         </div>
         

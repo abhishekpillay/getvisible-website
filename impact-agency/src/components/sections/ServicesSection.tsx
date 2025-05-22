@@ -14,23 +14,17 @@ const services = [
   {
     title: 'Content creation',
     image: '/images/services/content-creation.jpg',
-    icon: (
-      <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M16 17l-4 4m0 0l-4-4m4 4V3" /></svg>
-    )
+    icon: null
   },
   {
     title: 'Brand strategy',
     image: '/images/services/brand-strategy.jpg',
-    icon: (
-      <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
-    )
+    icon: null
   },
   {
     title: 'Digital marketing',
     image: '/images/services/digital-marketing.jpg',
-    icon: (
-      <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 7l5 5m0 0l-5 5m5-5H6" /></svg>
-    )
+    icon: null
   },
 ];
 
@@ -58,7 +52,7 @@ const itemVariants = {
 import SuccessStoriesSection from "./SuccessStoriesSection";
 import WhatSetsUsApartSection from "./WhatSetsUsApartSection";
 import CustomerTestimonialsSection from './CustomerTestimonialsSection';
-import FaqSection from './FaqSection';
+
 
 export default function ServicesSection() {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -145,7 +139,7 @@ export default function ServicesSection() {
       <SuccessStoriesSection />
       <WhatSetsUsApartSection />
       <CustomerTestimonialsSection />
-      <FaqSection />
+
     </div>
   </section>
   );

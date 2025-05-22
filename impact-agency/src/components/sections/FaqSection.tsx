@@ -144,7 +144,6 @@ export default function FaqSection() {
           viewport={{ once: true }}
           className="mt-16 text-center p-14 md:p-20 bg-gradient-to-r from-secondary/10 to-primary/10 rounded-3xl shadow-2xl border-2 border-primary/20"
         >
-
           <h2 className="text-3xl md:text-4xl font-bold text-primary mb-8 text-center">Let’s build your organic growth engine—designed for scale, built for results.</h2>
           <Button href="/contact" style={{ fontFamily: 'DM Sans, sans-serif' }}>
             Book Your Strategy Call →
