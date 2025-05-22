@@ -1,7 +1,8 @@
 "use client";
 
-import React, { useRef } from "react";
-import { motion, useInView } from "framer-motion";
+import React from "react";
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 
 const stats = [
   { key: 'brands', value: 100, label: "Brands Transformed" },
@@ -70,12 +71,71 @@ function AnimatedImpressionsGenerated({ isInView }: { isInView: boolean }) {
   );
 }
 
+function AnimatedAverageROI({ isInView }: { isInView: boolean }) {
+  const [value, setValue] = React.useState(2);
+  React.useEffect(() => {
+    if (isInView) {
+      let start = 2;
+      const end = 5;
+      const duration = 1200; // ms, sync with others
+      let current = start;
+      let startTime: number | null = null;
+      function step(ts: number) {
+        if (!startTime) startTime = ts;
+        const progress = Math.min((ts - startTime) / duration, 1);
+        current = Math.floor(start + (end - start) * progress);
+        setValue(current);
+        if (progress < 1) {
+          requestAnimationFrame(step);
+        } else {
+          setValue(end);
+        }
+      }
+      requestAnimationFrame(step);
+    }
+  }, [isInView]);
+  return (
+    <div className="text-3xl md:text-4xl font-bold text-gray-900 mb-1">
+      {value}x
+    </div>
+  );
+}
+
+function AnimatedClientRevenueGrowth({ isInView }: { isInView: boolean }) {
+  const [value, setValue] = React.useState(15);
+  React.useEffect(() => {
+    if (isInView) {
+      let start = 15;
+      const end = 25;
+      const duration = 1200; // ms, sync with others
+      let current = start;
+      let startTime: number | null = null;
+      function step(ts: number) {
+        if (!startTime) startTime = ts;
+        const progress = Math.min((ts - startTime) / duration, 1);
+        current = Math.floor(start + (end - start) * progress);
+        setValue(current);
+        if (progress < 1) {
+          requestAnimationFrame(step);
+        } else {
+          setValue(end);
+        }
+      }
+      requestAnimationFrame(step);
+    }
+  }, [isInView]);
+  return (
+    <div className="text-3xl md:text-4xl font-bold text-gray-900 mb-1">
+      {value}M+
+    </div>
+  );
+}
+
 export default function SuccessStoriesSection() {
-  const sectionRef = useRef<HTMLDivElement>(null);
-  const isInView = useInView(sectionRef, { once: true, margin: "-100px 0px" });
+  const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.3 });
 
   return (
-    <section ref={sectionRef} className="py-24 bg-white">
+    <section ref={ref} className="py-24 bg-white">
       <div className="container mx-auto px-4 flex flex-col md:flex-row items-center gap-12">
         {/* Left: Headline, description, button */}
         <div className="flex-1 max-w-xl">
@@ -97,9 +157,13 @@ export default function SuccessStoriesSection() {
           {stats.map((stat) => (
             <div key={stat.label} className="text-center">
               {stat.key === 'brands' ? (
-                <AnimatedBrandsTransformed isInView={isInView} />
+                <AnimatedBrandsTransformed isInView={inView} />
               ) : stat.key === 'impressions' ? (
-                <AnimatedImpressionsGenerated isInView={isInView} />
+                <AnimatedImpressionsGenerated isInView={inView} />
+              ) : stat.key === 'roi' ? (
+                <AnimatedAverageROI isInView={inView} />
+              ) : stat.key === 'revenue' ? (
+                <AnimatedClientRevenueGrowth isInView={inView} />
               ) : (
                 <div className="text-3xl md:text-4xl font-bold text-gray-900 mb-1">{stat.value}</div>
               )}
