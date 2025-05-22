@@ -135,7 +135,7 @@ export default function SuccessStoriesSection() {
   const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.3 });
 
   return (
-    <section ref={ref} className="py-24 bg-white">
+    <section ref={ref} className="py-24 bg-[#F8F9FB]">
       <div className="container mx-auto px-4 flex flex-col md:flex-row items-center gap-12">
         {/* Left: Headline, description, button */}
         <div className="flex-1 max-w-xl">

@@ -56,6 +56,7 @@ const itemVariants = {
 };
 
 import SuccessStoriesSection from "./SuccessStoriesSection";
+import WhatSetsUsApartSection from "./WhatSetsUsApartSection";
 
 export default function ServicesSection() {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -139,9 +140,9 @@ export default function ServicesSection() {
     </div>
   ))}
 </div>
-      </div>
       <SuccessStoriesSection />
-    </section>
+      <WhatSetsUsApartSection />
+    </div>
+  </section>
   );
 }
-
