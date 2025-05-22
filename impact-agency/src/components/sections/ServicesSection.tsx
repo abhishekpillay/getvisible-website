@@ -12,17 +12,17 @@ if (typeof window !== 'undefined') {
 
 const services = [
   {
-    title: 'Content creation',
+    title: 'Service 1',
     image: '/images/services/content-creation.jpg',
     icon: null
   },
   {
-    title: 'Brand strategy',
+    title: 'Service 2',
     image: '/images/services/brand-strategy.jpg',
     icon: null
   },
   {
-    title: 'Digital marketing',
+    title: 'Service 3',
     image: '/images/services/digital-marketing.jpg',
     icon: null
   },
@@ -105,11 +105,11 @@ export default function ServicesSection() {
           transition={{ duration: 0.6 }}
           className="text-center max-w-3xl mx-auto mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">
-            Delivering creative digital solutions
+          <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4" data-component-name="ServicesSection">
+            What You Get
           </h2>
-          <p className="text-lg text-gray-600">
-            Our team of experts combines creativity and technical expertise to deliver exceptional results that help your business grow.
+          <p className="text-lg text-gray-600" data-component-name="ServicesSection">
+            We don’t just “optimize pages” or “audit your blog.” We build and execute the system.
           </p>
         </motion.div>
 
@@ -124,7 +124,7 @@ export default function ServicesSection() {
         <img
           src={service.image}
           alt={service.title}
-          className="object-cover w-full h-full rounded-t-2xl"
+          className="object-cover w-full h-full rounded-t-[3rem] shadow-lg"
         />
       </div>
       <div className="flex-1 flex flex-col justify-between p-6 bg-white">

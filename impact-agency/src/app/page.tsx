@@ -4,6 +4,7 @@ import ServicesSection from '@/components/sections/ServicesSection';
 import FaqSection from '@/components/sections/FaqSection';
 import ClientsSection from '@/components/sections/ClientsSection';
 import HeroSection from '@/components/sections/HeroSection';
+// import IndustriesSection from '@/components/sections/IndustriesSection';
 import { motion, useScroll, useSpring } from 'framer-motion';
 import { useEffect } from 'react';
 
@@ -29,6 +30,7 @@ export default function Home() {
       <main className="flex flex-col">
         <HeroSection />
         <ClientsSection />
+        {/* <IndustriesSection /> */}
         <ServicesSection />
         <FaqSection />
       </main>

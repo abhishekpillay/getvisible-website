@@ -18,9 +18,7 @@ export default function Footer() {
             <div className="mb-5">
               <img src="/visible logo.svg" alt="Visible Logo" className="h-10 w-auto brightness-0 invert" />
             </div>
-            <p className="text-gray-300 text-base mb-6 max-w-xs">
-              Create your Agency website with Impact, a template for digital agencies and other creatives.
-            </p>
+            <p className="text-gray-300 text-base mb-6 max-w-xs" data-component-name="Footer">Footer content here</p>
             <div className="flex space-x-4 mt-2">
               <a href="#" className="text-white hover:text-secondary transition-colors duration-300">
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -90,9 +88,7 @@ export default function Footer() {
           className="border-t border-gray-700 pt-8"
         >
           <div className="flex flex-col md:flex-row justify-between items-center">
-            <p className="text-gray-400 text-sm mb-4 md:mb-0">
-              © {currentYear} Impact Agency. All rights reserved.
-            </p>
+            <p className="text-gray-400 text-sm mb-4 md:mb-0" data-component-name="Footer">Copyright Visible Content Technologies, Inc.</p>
             <div className="flex space-x-6">
               <Link href="/privacy-policy" className="text-gray-400 hover:text-white text-sm transition-colors duration-300">
                 Privacy Policy
