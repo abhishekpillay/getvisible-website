@@ -57,6 +57,8 @@ const itemVariants = {
 
 import SuccessStoriesSection from "./SuccessStoriesSection";
 import WhatSetsUsApartSection from "./WhatSetsUsApartSection";
+import CustomerTestimonialsSection from './CustomerTestimonialsSection';
+import FaqSection from './FaqSection';
 
 export default function ServicesSection() {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -142,6 +144,8 @@ export default function ServicesSection() {
 </div>
       <SuccessStoriesSection />
       <WhatSetsUsApartSection />
+      <CustomerTestimonialsSection />
+      <FaqSection />
     </div>
   </section>
   );

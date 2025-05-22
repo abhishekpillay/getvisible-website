@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
+import { Button } from '../ui/Button';
 
 const navItems = [
   { name: 'Home', href: '/' },
@@ -88,12 +89,7 @@ export default function Header() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4, delay: 0.2 }}
           >
-            <Link
-              href="/contact"
-              className="bg-secondary text-white px-5 py-2 rounded-lg shadow-sm hover:bg-secondary/90 font-medium text-[0.95rem] transition-all duration-200 hover:shadow-md"
-            >
-              Contact us
-            </Link>
+            <Button href="/contact">Contact us</Button>
           </motion.div>
 
           {/* Mobile Menu Button */}
@@ -136,13 +132,13 @@ export default function Header() {
                     {item.name}
                   </Link>
                 ))}
-                <Link
-                  href="/contact"
-                  className="mt-2 bg-secondary text-white px-6 py-3 rounded-lg shadow hover:bg-secondary/90 font-medium text-[1rem] text-center transition-colors duration-150"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  Contact us
-                </Link>
+                <Button
+  href="/contact"
+  className="mt-2 text-[1rem] text-center"
+  onClick={() => setIsMobileMenuOpen(false)}
+>
+  Contact us
+</Button>
               </nav>
             </div>
           </motion.div>

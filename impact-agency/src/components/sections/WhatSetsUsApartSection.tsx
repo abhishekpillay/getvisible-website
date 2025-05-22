@@ -57,7 +57,7 @@ export default function WhatSetsUsApartSection() {
       </div>
       <div className="flex justify-center mt-10">
         <button
-          className="bg-gradient-to-r from-[#2e78eb] to-[#1861c2] text-white px-6 py-3 rounded-xl shadow-lg font-bold text-base transition-all duration-200 hover:brightness-110 hover:scale-105 focus:outline-none focus:ring-4 focus:ring-[#2e78eb]/40"
+          className="bg-gradient-to-r from-[#2e78eb] to-[#1861c2] text-white px-6 py-3 rounded-xl shadow-lg font-medium text-base transition-all duration-200 hover:brightness-110 hover:scale-105 focus:outline-none focus:ring-4 focus:ring-[#2e78eb]/40"
           style={{ fontFamily: 'DM Sans, sans-serif' }}
         >
           Book a Strategy Call &rarr;
