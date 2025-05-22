@@ -1,7 +1,19 @@
 [build]
   command = "npm run build"
-  publish = ".next"
+  publish = "out"
 
 [dev]
   command = "npm run dev"
   port = 3000
+
+# Handle client-side routing
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+# Handle 404s - This ensures all routes are handled by the SPA
+[[redirects]]
+  from = "/*"
+  to = "/404.html"
+  status = 404
