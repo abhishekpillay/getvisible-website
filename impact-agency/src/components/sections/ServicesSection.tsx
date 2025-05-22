@@ -55,6 +55,8 @@ const itemVariants = {
   },
 };
 
+import SuccessStoriesSection from "./SuccessStoriesSection";
+
 export default function ServicesSection() {
   const sectionRef = useRef<HTMLDivElement>(null);
   const isInView = useInView(sectionRef, { once: true, margin: "-100px 0px" });
@@ -138,6 +140,7 @@ export default function ServicesSection() {
   ))}
 </div>
       </div>
+      <SuccessStoriesSection />
     </section>
   );
 }

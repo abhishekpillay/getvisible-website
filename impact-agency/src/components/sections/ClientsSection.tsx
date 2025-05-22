@@ -12,12 +12,12 @@ if (typeof window !== 'undefined') {
 }
 
 const clients = [
-  { name: 'Simplified AI' },
-  { name: 'Otto AI' },
-  { name: 'Fireflies AI' },
-  { name: '1Fort' },
-  { name: 'Roomi' },
-  { name: 'Dupe.com' },
+  { name: 'Simplified AI', logo: '/65b38cc207d91bef7da299c0_Simplified-p-800.png' },
+  { name: 'Otto AI', logo: '/joinotto-logo.webp' },
+  { name: 'Fireflies AI', logo: '/65b36f5804aae4916f459bb2_Fireflies AI.webp' },
+  { name: '1Fort', logo: '/65b362078debdc76ecca7e3e_1fort.svg' },
+  { name: 'Roomi', logo: '/65b35eb4111f2b7f5d12ff3f_Roomi.svg' },
+  { name: 'Dupe.com', logo: '/65b35f941f55e4b2d62e30ad_theguarantors.webp' },
 ];
 
 export default function ClientsSection() {
@@ -65,8 +65,9 @@ export default function ClientsSection() {
           className="text-center mb-12"
         >
           
+          <h2 className="text-3xl font-bold mb-4">Who We Work With</h2>
           <p className="text-gray-600 max-w-2xl mx-auto">
-            We've had the privilege of working with some of the most innovative companies across various industries.
+            We partner with growth-stage SaaS companies that are ready to move beyond paid spend and build an organic engine that compounds.
           </p>
         </motion.div>
 
@@ -78,12 +79,29 @@ export default function ClientsSection() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className="w-32 h-16 flex items-center justify-center grayscale hover:grayscale-0 transition-all duration-300"
+              className="w-32 h-16 flex items-center justify-center transition-all duration-300"
             >
-              <div className="relative w-full h-full">
-                <div className="bg-gray-200 rounded-md p-4 flex items-center justify-center h-full">
-                  {client.name}
-                </div>
+              <div className={`relative flex items-center justify-center ${client.name === 'Otto AI' ? 'w-16 h-8 mx-auto' : 'w-full h-full'}`}>
+                {client.logo ? (
+                  client.name === 'Otto AI' ? (
+                    <Image
+                      src={client.logo}
+                      alt={client.name + ' Logo'}
+                      width={64}
+                      height={32}
+                      style={{ objectFit: 'contain' }}
+                    />
+                  ) : (
+                    <Image
+                      src={client.logo}
+                      alt={client.name + ' Logo'}
+                      fill
+                      style={{ objectFit: 'contain' }}
+                    />
+                  )
+                ) : (
+                  <span className="text-gray-400 text-sm">{client.name}</span>
+                )}
               </div>
             </motion.div>
           ))}
