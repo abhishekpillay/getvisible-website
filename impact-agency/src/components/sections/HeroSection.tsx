@@ -60,16 +60,17 @@ export default function HeroSection() {
       
       {/* Main content */}
       <div className="container mx-auto px-4 relative z-10">
-        <div className="flex flex-col items-center justify-center text-center max-w-3xl mx-auto">
+        <div className="flex flex-col items-center justify-center text-center max-w-7xl mx-auto">
           
 
           {/* Main headline */}
-          <h1 className="hero-title text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-bold text-gray-900 mb-6 leading-[1.1]">
-            You Built the Product. We’re the SaaS SEO Agency That Grows It.
+          <h1 className="hero-title font-bold text-gray-900 mb-6 leading-tight text-[clamp(2rem,6vw,4rem)]">
+            You Built the Product.<br />
+            We’re the SaaS SEO Agency That Grows It.
           </h1>
 
           {/* Subtitle */}
-          <p className="hero-subtitle text-sm md:text-base text-gray-600 mb-10 max-w-2xl mx-auto leading-relaxed">
+          <p className="hero-subtitle text-gray-600 mb-10 max-w-2xl mx-auto leading-relaxed text-[clamp(0.9rem,1.8vw,1.35rem)] font-normal">
             We help companies in FinTech, AI, and B2B SaaS build sustainable growth through content, AI-powered SEO services, and search strategies that actually drive results.
           </p>
           <button

@@ -56,7 +56,7 @@ export default function ClientsSection() {
 
   return (
     <section ref={sectionRef} className="py-16 bg-gray-50">
-      <div className="container mx-auto">
+      <div className="w-full">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -72,7 +72,7 @@ export default function ClientsSection() {
         </motion.div>
 
         <div className="overflow-hidden py-4">
-          <div className="flex items-center gap-12 animate-logo-ticker whitespace-nowrap" style={{ animation: 'logo-ticker 40s linear infinite' }}>
+          <div className="flex items-center gap-20 animate-logo-ticker whitespace-nowrap" style={{ animation: 'logo-ticker 32s linear infinite' }}>
             {[...clients, ...clients].map((client, index) => (
               <div
                 key={client.name + '-' + index}
