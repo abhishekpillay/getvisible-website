@@ -60,13 +60,13 @@ export default function HeroSection() {
       
       {/* Main content */}
       <div className="container mx-auto px-4 relative z-10">
-        <div className="flex flex-col items-center justify-center text-center max-w-7xl mx-auto">
+        <div className="flex flex-col items-center justify-center text-center max-w-full mx-auto">
           
 
           {/* Main headline */}
-          <h1 className="hero-title font-bold text-gray-900 mb-6 leading-tight text-[clamp(2rem,6vw,4rem)]">
+          <h1 className="hero-title font-bold text-gray-900 mb-6 leading-tight text-[clamp(1.875rem,5.6vw,3.875rem)]">
             You Built the Product.<br />
-            We’re the SaaS SEO Agency That Grows It.
+            <span className="whitespace-nowrap">We're the SaaS SEO Agency That Grows It.</span>
           </h1>
 
           {/* Subtitle */}

@@ -65,7 +65,7 @@ export default function ClientsSection() {
           className="text-center mb-12"
         >
           
-          <h2 className="text-3xl font-bold mb-4">Who We Work With</h2>
+          <h2 className="text-[40px] font-bold mb-4">Who We Work With</h2>
           <p className="text-gray-600 max-w-2xl mx-auto">
             We partner with growth-stage SaaS companies that are ready to move beyond paid spend and build an organic engine that compounds.
           </p>
@@ -73,13 +73,13 @@ export default function ClientsSection() {
 
         <div className="overflow-hidden py-4">
           <div className="flex items-center gap-20 animate-logo-ticker whitespace-nowrap" style={{ animation: 'logo-ticker 32s linear infinite' }}>
-            {[...clients, ...clients].map((client, index) => (
+            {[...clients, ...clients, ...clients].map((client, index) => (
               <div
                 key={client.name + '-' + index}
                 className="w-32 h-16 flex items-center justify-center"
                 style={{ flex: '0 0 auto' }}
               >
-                <div className={`relative flex items-center justify-center w-full h-full`}>
+                <div className="relative flex items-center justify-center w-full h-full">
                   <img
                     src={client.logo}
                     alt={client.name + ' Logo'}
@@ -94,7 +94,7 @@ export default function ClientsSection() {
         <style jsx>{`
           @keyframes logo-ticker {
             0% { transform: translateX(0); }
-            100% { transform: translateX(-50%); }
+            100% { transform: translateX(-33.33%); }
           }
         `}</style>
       </div>
