@@ -57,19 +57,6 @@ export default function ClientsSection() {
   return (
     <section ref={sectionRef} className="py-16 bg-gray-50">
       <div className="w-full">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-          className="text-center mb-12"
-        >
-          
-          <h2 className="text-[40px] font-bold mb-4">Who We Work With</h2>
-          <p className="text-gray-600 max-w-2xl mx-auto">
-            We partner with growth-stage SaaS companies that are ready to move beyond paid spend and build an organic engine that compounds.
-          </p>
-        </motion.div>
 
         <div className="overflow-hidden py-4">
           <div className="flex items-center gap-20 animate-logo-ticker whitespace-nowrap" style={{ animation: 'logo-ticker 32s linear infinite' }}>

@@ -32,13 +32,6 @@ export default function HeroSection() {
         ease: 'sine.inOut'
       });
 
-      // Animate grid lines
-      gsap.to('.hero-grid', {
-        backgroundPosition: '0 10px',
-        duration: 15,
-        repeat: -1,
-        ease: 'linear'
-      });
 
       // Animate text reveal
       const tl = gsap.timeline();
@@ -56,7 +49,7 @@ export default function HeroSection() {
     >
       {/* Light blue background with grid */}
       <div className="absolute inset-0 bg-[#f0f4f9] hero-gradient z-0"></div>
-      <div className="absolute inset-0 hero-grid bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHZpZXdCb3g9IjAgMCA0MCA0MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Ik0wIDBoNDB2NDBoLTQweiIvPjxwYXRoIGQ9Ik00MCAwdjQwSDBWMGg0MHpNMSAxaDM4djM4SDFWMXoiIGZpbGw9InJnYmEoMCwwLDAsMC4wNSkiLz48L2c+PC9zdmc+')] opacity-30 z-0"></div>
+      <div className="absolute inset-0 hero-grid bg-[#F0F4F8] z-0"></div>
       
       {/* Main content */}
       <div className="container mx-auto px-4 relative z-10">
