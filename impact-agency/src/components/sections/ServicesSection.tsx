@@ -12,17 +12,17 @@ if (typeof window !== 'undefined') {
 
 const services = [
   {
-    title: 'Service 1',
+    title: 'SEO & AEO',
     image: '/images/services/content-creation.jpg',
     icon: null
   },
   {
-    title: 'Service 2',
+    title: 'Content Marketing',
     image: '/images/services/brand-strategy.jpg',
     icon: null
   },
   {
-    title: 'Service 3',
+    title: 'Influencer Marketing',
     image: '/images/services/digital-marketing.jpg',
     icon: null
   },

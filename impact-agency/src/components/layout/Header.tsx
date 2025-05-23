@@ -29,7 +29,7 @@ export default function Header() {
     <motion.header
       initial={false}
       animate={isScrolled ? {
-        background: 'rgba(255,255,255,0.8)',
+        background: 'rgba(255,255,255,0.6)',
         boxShadow: '0 2px 24px 0 rgba(0,0,0,0.04)',
         backdropFilter: 'blur(14px)',
         paddingTop: '0.75rem',

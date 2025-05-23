@@ -18,8 +18,8 @@ export default function Home() {
 
   useEffect(() => {
     // Smooth scroll to top on page load
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  }, []);
+    window.scrollTo
+  }, []);({ top: 0, behavior: 'smooth' });
 
   return (
     <>
@@ -30,8 +30,8 @@ export default function Home() {
       <main className="flex flex-col">
         <HeroSection />
         <ClientsSection />
-        <IndustriesSection />
         <ServicesSection />
+        <IndustriesSection />
         <FaqSection />
       </main>
     </>

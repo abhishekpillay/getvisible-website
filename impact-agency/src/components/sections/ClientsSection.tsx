@@ -71,41 +71,32 @@ export default function ClientsSection() {
           </p>
         </motion.div>
 
-        <div ref={clientsRef} className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 items-center justify-items-center">
-          {clients.map((client, index) => (
-            <motion.div
-              key={client.name}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.4, delay: index * 0.1 }}
-              viewport={{ once: true }}
-              className="w-32 h-16 flex items-center justify-center transition-all duration-300"
-            >
-              <div className={`relative flex items-center justify-center ${client.name === 'Otto AI' ? 'w-16 h-8 mx-auto' : 'w-full h-full'}`}>
-                {client.logo ? (
-                  client.name === 'Otto AI' ? (
-                    <Image
-                      src={client.logo}
-                      alt={client.name + ' Logo'}
-                      width={64}
-                      height={32}
-                      style={{ objectFit: 'contain' }}
-                    />
-                  ) : (
-                    <Image
-                      src={client.logo}
-                      alt={client.name + ' Logo'}
-                      fill
-                      style={{ objectFit: 'contain' }}
-                    />
-                  )
-                ) : (
-                  <span className="text-gray-400 text-sm">{client.name}</span>
-                )}
+        <div className="overflow-hidden py-4">
+          <div className="flex items-center gap-12 animate-logo-ticker whitespace-nowrap" style={{ animation: 'logo-ticker 40s linear infinite' }}>
+            {[...clients, ...clients].map((client, index) => (
+              <div
+                key={client.name + '-' + index}
+                className="w-32 h-16 flex items-center justify-center"
+                style={{ flex: '0 0 auto' }}
+              >
+                <div className={`relative flex items-center justify-center w-full h-full`}>
+                  <img
+                    src={client.logo}
+                    alt={client.name + ' Logo'}
+                    style={{ objectFit: 'contain', maxHeight: '48px', maxWidth: '128px' }}
+                    className="block"
+                  />
+                </div>
               </div>
-            </motion.div>
-          ))}
+            ))}
+          </div>
         </div>
+        <style jsx>{`
+          @keyframes logo-ticker {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+          }
+        `}</style>
       </div>
     </section>
   );
